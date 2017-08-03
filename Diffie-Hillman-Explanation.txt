@@ -1,0 +1,24 @@
+In the year 1976, Whitfield Diffie and Martin Hellman published a scheme for public key exchange which is known as one of the earliest examples of public key exchange. The D-H key exchange method allowed two parties with no prior knowledge of one another to jointly establish a shared secret key over an insecure channel.
+
+
+D-H key exchange is basically a one-way function which is easy to implement one-way but very hard to reverse.
+To better understand this, we will first look at the implementation of this function with the help of colors.
+
+In this scenario let’s assume Alice wants to send a secret color to Bob. Firstly, they agree on a Common Paint, they then select their individual secret colors (these secret colors are known just to them. 
+
+Now they mix up their secret colors with the common paint and then send the mixture over an insecure public transport channel.
+
+After receiving the mixture, they just mix up their secret colors again with the mixture and both the parties end up with a common secret color.
+
+If in case someone in the middle get the mixture colors while the transport they will not be able to find out the common secret color until and unless they have the secret colors from either Alice or Bob.
+
+Now in the real world of key exchange, a prime modulus is used which may be any number and its primitive root is generated which will be our generator.
+
+This prime modulus and primitive root are public. Now both the parties say Alice and Bob choose their own secret exponent to the generator and then compute the function as follows:
+
+Generator secret exponent mod prime modulus = Shared Result
+
+Each one of them then shared their individual results over the public channel. On receiving the shared result, they undergo the same function again using their secret exponent and both parties end up with a secret shared key.
+
+Source: https://en.wikipedia.org/wiki/Diffie–Hellman_key_exchange
+https://www.youtube.com/watch?v=YEBfamv-_do
